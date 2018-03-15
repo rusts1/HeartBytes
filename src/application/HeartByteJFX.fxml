@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXController">
+   <children>
+      <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="New" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem fx:id="btnLoadVid" mnemonicParsing="false" onAction="#loadVideo" text="Load Video" />
+                  <MenuItem mnemonicParsing="false" text="Export Report" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Settings" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox layoutY="27.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+         <children>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="278.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <VBox layoutY="-6.0" prefHeight="573.0" prefWidth="279.0" spacing="10.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-6.0">
+                     <children>
+                        <Label prefHeight="31.0" prefWidth="216.0" text="Set Vessel Parameters">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <GridPane alignment="CENTER" prefHeight="112.0" prefWidth="215.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="77.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="0.0" prefWidth="77.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="62.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="38.0" minHeight="9.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="43.0" minHeight="3.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="txtVessel1x" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc1" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                          <padding>
+                              				<Insets bottom="0" left="0" right="0" top="0" />                 
+                      					</padding>
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="btnDec1" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                          <padding>
+                              				<Insets bottom="0" left="0" right="0" top="0" />                 
+                      					</padding>
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="txtVessel1y" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc2" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec2" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="118.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <TextField fx:id="txtVessel2x" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc3" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec3" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <TextField fx:id="txtVessel2y" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc4" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec4" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnSetInnerVesselLine" alignment="CENTER" mnemonicParsing="false" onAction="#setModeToIVL" prefHeight="53.0" prefWidth="55.0" text="Set inner Vessel Line" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                              <Label text="Point 1 x" />
+                              <Label text="Point 1 y" GridPane.columnIndex="1" />
+                              <Label text="Point 2 x" GridPane.rowIndex="2" />
+                              <Label text="Point 2 y" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <GridPane alignment="CENTER" layoutX="10.0" layoutY="51.0" prefHeight="112.0" prefWidth="215.0">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="txtScaley1" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc5" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec5" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="txtScaley2" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc6" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec6" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="118.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <TextField fx:id="txtVesselxScale" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc7" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec7" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <VBox prefHeight="5.0" prefWidth="0.0" />
+                                    <TextField fx:id="txtVesselScale" prefHeight="33.0" prefWidth="67.0" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnSetPxlScaleCm" alignment="CENTER" mnemonicParsing="false" onAction="#setModeToVPS" prefHeight="38.0" prefWidth="55.0" text="Set Pixel Scale" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                              <Label text="Point 1 y" />
+                              <Label text="Point 2 y" GridPane.columnIndex="1" />
+                              <Label fx:id="txtScalex" text="Scale x " GridPane.rowIndex="2" />
+                              <Label text="Pixel:cm" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="Length (cm)" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="lblPxltoCm" prefHeight="31.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="77.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="0.0" prefWidth="75.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="64.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="38.0" minHeight="9.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="43.0" minHeight="3.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="216.0" text="Set Doppler Parameters">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <GridPane alignment="CENTER" layoutX="10.0" layoutY="51.0" prefHeight="112.0" prefWidth="215.0">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="txtDopLeftLimit" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc10" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec10" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="txtDopRightLimit" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc11" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec11" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="118.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <TextField fx:id="txtDopUpperLimit" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc12" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec12" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <TextField fx:id="txtDopLowerLimit" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc13" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec13" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnSetInnerVesselLine1" alignment="CENTER" mnemonicParsing="false" onAction="#setModeToD" prefHeight="38.0" prefWidth="62.0" text="Set Doppler" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                              <Label text="Left Limit" />
+                              <Label text="Right Limit" GridPane.columnIndex="1" />
+                              <Label text="Upper Limit" GridPane.rowIndex="2" />
+                              <Label text="Lower Limit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <HBox layoutX="86.0" layoutY="84.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="67.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <children>
+                                    <TextField fx:id="txtDopZeroAxis" prefHeight="32.0" prefWidth="57.0" />
+                                    <VBox prefHeight="5.0" prefWidth="0.0">
+                                       <children>
+                                          <Button fx:id="btnInc14" alignment="CENTER" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_up_black_24dp/ic_keyboard_arrow_up_black_24dp/web/ic_keyboard_arrow_up_black_24dp_1x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                          <Button fx:id="btnDec14" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/ic_keyboard_arrow_down_black_24dp/ic_keyboard_arrow_down_black_24dp/web/ic_keyboard_arrow_down_black_24dp_2x.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets bottom="0" left="0" right="0" top="0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Label text="Zero Axis" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="77.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="0.0" prefWidth="77.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="62.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="38.0" minHeight="9.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="43.0" minHeight="3.0" prefHeight="13.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane alignment="CENTER" layoutX="10.0" layoutY="173.0" prefHeight="112.0" prefWidth="215.0">
+                           <children>
+                              <Label text="Horizonal Scale (sec)" />
+                              <Label text="Pixel : cm/s" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Vertical Scal (cm/s)" GridPane.rowIndex="2" />
+                              <Label fx:id="lblVDopScale" prefHeight="31.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="lblHDopScale" layoutX="109.0" layoutY="86.0" prefHeight="31.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtDopHScale" prefHeight="33.0" prefWidth="104.0" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtDopVScale" layoutX="10.0" layoutY="30.0" prefHeight="33.0" prefWidth="104.0" GridPane.rowIndex="3" />
+                              <Label text="Pixel : seconds" GridPane.columnIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="0.0" prefWidth="119.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="96.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="38.0" minHeight="9.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="43.0" minHeight="3.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="763.0" prefWidth="769.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <BorderPane layoutX="91.0" layoutY="193.0" prefHeight="571.0" prefWidth="411.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <ImageView fx:id="currentFrame" fitHeight="480.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true" />
+                     </center>
+                     <left>
+                        <Button fx:id="btnPrevFrame" mnemonicParsing="false" onAction="#previousFrame" text="&lt;&lt;" BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <Button fx:id="btnNextFrame" mnemonicParsing="false" onAction="#nextFrame" text="&gt;&gt;" BorderPane.alignment="CENTER" />
+                     </right>
+                     <top>
+                        <Label text="Video" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                     </top>
+                     <bottom>
+                        <GridPane BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ProgressBar prefWidth="200.0" progress="0.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              <Button fx:id="btnStartAnalysis" alignment="CENTER" mnemonicParsing="false" onAction="#startAnalysis" text="Run Analysis" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <TextField fx:id="txtfCurrFrame" text="0" />
+                              <Text fx:id="lblTotalFrames" strokeType="OUTSIDE" strokeWidth="0.0" text="Total frames:" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </bottom>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="763.0" prefWidth="331.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <VBox layoutX="77.0" layoutY="171.0" prefHeight="572.0" prefWidth="294.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <LineChart>
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart>
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <CheckBox mnemonicParsing="false" text="CheckBox" />
+                              <CheckBox mnemonicParsing="false" text="CheckBox" />
+                              <CheckBox mnemonicParsing="false" text="CheckBox" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>
